@@ -7,8 +7,7 @@
  * http://ipafont.ipa.go.jp/ipa_font_license_v1.html（IPAフォントライセンスv1.0のURL）
  */
 @font-face {
-    font-family: 'ほのか明朝';
-    src: url('font_1_honokamin.ttf') format('truetype');
+    font-family: 'ＭＳ 明朝';
     font-weight: normal;
     font-style: normal;
 }
@@ -43,7 +42,7 @@ body,html {
 }
 
 body {
-  padding-top: 60px;
+  padding-top: 0px;
 }
 
 h1,h2,h3,h4,h5,h6,body {
@@ -119,9 +118,7 @@ h1,h2,h3,h4,h5,h6 {
 
 
 header.header {
-  @include basePadding;
   border-bottom: 1px solid $gray;
-  background-color: #fff;
   position: fixed;
   top: 0;
   left: 0;
