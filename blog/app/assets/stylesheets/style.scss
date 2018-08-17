@@ -213,7 +213,7 @@ div.contents.row {
     font-weight: normal;
     strong {
       font-weight: bold;
-      padding-right: 5px;
+      padding-right: 0px;
       font-size: 1.2em;
     }
   }
@@ -228,7 +228,7 @@ div.contents.row {
     background-size: cover;
     background-position: center center;
     border-radius: 3px;
-    box-shadow: 0 0 10px rgba($black,0.2);
+    box-shadow: 0 0 0px ;
     &:after {
       content: '';
       position: absolute;
@@ -236,8 +236,6 @@ div.contents.row {
       bottom: 0;
       left: 0;
       right: 0;
-      @include filter-gradient(#000000, #a60000, vertical);
-      @include background-image(linear-gradient(top,  rgba(0,0,0,0) 0%,rgba(0,0,0,0) 62%,rgba(0,0,0,0.85) 100%));
       z-index: 1;
       border-radius: 3px;
     }
@@ -290,7 +288,7 @@ div.contents.row {
       font-size: 20px;
       z-index: 2;
       font-weight: bold;
-      text-shadow: 0 0 2px #000, 0 0 1px #000, 0 0 1px #000;
+      text-shadow: 0 ;
     }
     span.name {
       position: absolute;
@@ -313,23 +311,24 @@ div.contents.row {
     }
   }
   form {
-    @include boxBase(20px 0 ,30px);
+    @include boxBase(30px 0 ,30px);
     background-color: green;
     box-sizing: border-box;
+    border-radius: 30px;
 
     h3 {
       @include baseMargin(0 0 20px);
       text-align: center;
       font-weight: normal;
       font-size: 20px;
-      color: gray;
+      color: lightgreen;
     }
     input,textarea {
-      width: 100%;
+      width: 80%;
       @include boxBase(5px 0 15px,10px);
-      border: 1px solid white;
-      border-radius: 5px;
-      font-family: "游ゴシック", "YuGothic";
+      border: 3px solid lightgreen;
+      border-radius: 50px;
+      font-family: "MS 明朝", "YuGothic";
     }
     input[type="submit"] {
       @extend .transition;
