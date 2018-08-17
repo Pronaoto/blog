@@ -1,0 +1,9 @@
+  <div class="contents row" >
+    <% @writes.each do |write| %>
+      <div class="content_post" style="background-image: url(<%= write.image %>);">
+        <%= simple_format(write.text) %>
+        <span class="name"><%= write.name %></span>
+      </div>
+    <% end %>
+  <%= paginate(@writes) %>
+  </div>
