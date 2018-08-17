@@ -1,9 +1,22 @@
-  <div class="contents row" >
-    <% @writes.each do |write| %>
-      <div class="content_post" style="background-image: url(<%= write.image %>);">
+<div class="contents row">
+  <% @writes.each do |write| %>
+    <div class="content_post" style="background-image: url(<%= write.image %>);">
+      <% if user_signed_in? && current_user.id == write.user_id %>
+        <div class="more">
+          <span><%= image_tag 'arrow_top.png' %></span>
+          <ul class="more_list">
+            <li>
+              <%= link_to '削除', "/writes/#{write.id}", method: :delete %>
+            </li>
+          </ul>
+        </div>
+      <% end %>
         <%= simple_format(write.text) %>
-        <span class="name"><%= write.name %></span>
-      </div>
-    <% end %>
+      <span class="name">
+        <a href="/users/<%= write.user_id %>">
+        </a>
+      </span>
+    </div>
+  <% end %>
   <%= paginate(@writes) %>
-  </div>
+</div>
