@@ -18,6 +18,17 @@ class BlogsController < ApplicationController
     write.destroy if write.user_id == current_user.id
   end
 
+  def edit
+    @write = Write.find(params[:id])
+  end
+
+  def update
+    write = Write.find(params[:id])
+    if write.user_id == current_user.id
+      write.update(write_params)
+    end
+  end
+
     private
     def write_params
       params.permit(:name, :image, :text)
