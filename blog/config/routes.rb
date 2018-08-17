@@ -5,8 +5,8 @@ Rails.application.routes.draw do
   get   'blogs/new'    =>  'blogs#new'
   post  'blogs'        =>  'blogs#create'
   delete  'blogs/:id'  => 'blogs#destroy'
-  patch   'writes/:id' =>  'writes#update'
-  get    'writes/:id/edit' => 'writes#edit'
+  patch   'writes/:id' =>  'blogs#update'
+  get    'writes/:id/edit' => 'blogs#edit'
   get   'users/:id'     =>  'users#show'
   end
   # The priority is based upon order of creation: first created -> highest priority.
