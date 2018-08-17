@@ -1,0 +1,7 @@
+<div class="contents row">
+  <p><%= @nickname %>さんの投稿一覧</p>
+  <% @writes.each do |write| %>
+    <%= render partial: "writes/write", locals: { write: write } %>
+  <% end %>
+  <%= paginate(@writes) %>
+</div>

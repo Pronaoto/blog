@@ -23,13 +23,19 @@
       <ul id="nav-mobile" class="right hide-on-med-and-down">
         <% if user_signed_in? %>
         <div class="user_nav grid-6">
+        <li>
         <%= link_to "ログアウト",destroy_user_session_path, method: :delete %>
+      </li>
         <li><a href="/blogs/new">投稿する</a></li>
         </div>
         <% else %>
          <div class="grid-6">
+          <li>
           <%= link_to "ログイン", new_user_session_path, class: 'post' %>
-          <%= link_to "新規登録", new_user_registration_path, class: 'post' %>
+        </li>
+        <li>
+        <%= link_to "新規登録", new_user_registration_path, class: 'post' %>
+      </li>
          </div>
         <% end %>
       </ul>
@@ -40,5 +46,7 @@
 
 <%= yield %>
 
+
+  </ul>
 </body>
 </html>
