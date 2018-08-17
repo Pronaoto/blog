@@ -1,10 +1,14 @@
 Rails.application.routes.draw do
   devise_for :users
   root to: 'blogs#index'
-  resources :blogs, only: [:index, :new, :create, :destroy,]do
-  resources :users, only: [:show]
-end
-end
+  get   'blogs'        =>  'blogs#index'
+  get   'blogs/new'    =>  'blogs#new'
+  post  'blogs'        =>  'blogs#create'
+  delete  'blogs/:id'  => 'blogs#destroy'
+  patch   'writes/:id' =>  'writes#update'
+  get    'writes/:id/edit' => 'writes#edit'
+  get   'users/:id'     =>  'users#show'
+  end
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
