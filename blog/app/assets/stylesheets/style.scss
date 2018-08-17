@@ -230,8 +230,8 @@ div.contents.row {
     color: #fff;
     background-size: cover;
     background-position: center center;
-    border-radius: 3px;
-    box-shadow: 0 0 10px rgba($black,0.2);
+    border-radius: 30px;
+    box-shadow: 0 0 0px rgba($black,0.2);
     &:after {
       content: '';
       position: absolute;
@@ -325,7 +325,7 @@ div.contents.row {
       text-align: center;
       font-weight: normal;
       font-size: 20px;
-      color: gray;
+      color: yellow;
     }
     input,textarea {
       width: 100%;
@@ -337,13 +337,13 @@ div.contents.row {
     input[type="submit"] {
       @extend .transition;
       background-color: yellow;
-      border-radius: 20px;
+      border-radius: 60px;
       color: orange;
       border: 0;
       font-size: 18px;
-      &:hover {
-        background-color: lighten($accent, 10%);
-      }
+    }
+    waves-effect waves-light btn-large {
+
     }
   }
   .success {
