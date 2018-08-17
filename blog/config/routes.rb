@@ -1,11 +1,9 @@
 Rails.application.routes.draw do
   devise_for :users
-  root to: "blogs#index"
-  get 'blogs'        => 'blogs#index'
-  get 'blogs/new'    => 'blogs#new'#投稿画面
-  post 'blogs'       => 'blogs#create'#投稿
-  delete 'blogs/:id' => 'blogs#destroy'
+  root to: 'blogs#index'
+  resources :blogs, only: [:index, :new, :create, :destroy,]do
   resources :users, only: [:show]
+end
 end
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

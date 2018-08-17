@@ -15,9 +15,7 @@ class BlogsController < ApplicationController
 
   def destroy
     write = Write.find(params[:id])
-    if write.user_id == current_user.id
-      write.destroy
-    end
+    write.destroy if write.user_id == current_user.id
   end
 
     private
