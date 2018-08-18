@@ -327,7 +327,7 @@ div.contents.row {
       width: 80%;
       @include boxBase(5px 0 15px,10px);
       border: 3px solid lightgreen;
-      border-radius: 50px;
+      border-radius: 0px;
       font-family: "MS 明朝", "YuGothic";
     }
     input[type="submit"] {
