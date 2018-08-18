@@ -56,7 +56,7 @@ line-height: 1.57;
 
 a {
   text-decoration: none;
-  color: $dark;
+  color: white;
   @extend .transition;
   &:hover {
     color: $accent;
