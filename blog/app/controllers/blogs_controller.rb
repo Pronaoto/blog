@@ -7,7 +7,6 @@ class BlogsController < ApplicationController
   end
 
   def new
-    @write = Write.new
   end
 
   def create
@@ -15,7 +14,7 @@ class BlogsController < ApplicationController
   end
 
   def destroy
-    @write = Write.find(params[:id])
+    write = Write.find(params[:id])
     write.destroy if write.user_id == current_user.id
   end
 
@@ -24,7 +23,7 @@ class BlogsController < ApplicationController
   end
 
   def update
-    @write = Write.find(params[:id])
+    write = Write.find(params[:id])
     if write.user_id == current_user.id
       write.update(write_params)
     end

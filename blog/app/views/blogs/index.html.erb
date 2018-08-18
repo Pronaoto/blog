@@ -1,9 +1,14 @@
 <div class="contents row">
   <% @writes.each do |write| %>
     <div class="content_post" style="background-image: url(<%= write.image %>);">
+      <span class="name">
+        <a href="">
+          <span>投稿者</span><%= write.user.nickname %>
+        </a>
+      </span>
       <% if user_signed_in? && current_user.id == write.user_id %>
         <div class="more">
-          <span><%= image_tag 'arrow_top.png' %></span>
+          <i class="material-icons">ac_unit</i>
           <ul class="more_list">
             <li>
               <%= link_to '編集', "/writes/#{write.id}/edit", method: :get %>
